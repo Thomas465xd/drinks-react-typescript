@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useState } from "react"
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useAppStore } from "../stores/useAppStore"
 
@@ -14,6 +14,7 @@ export default function Header() {
 
     const fetchCategories = useAppStore((state) => state.fetchCategories )
     const categories = useAppStore((state) => state.categories )
+    const searchRecipes = useAppStore((state) => state.searchRecipes )
     //console.log(categories)
 
     useEffect(() => {
@@ -21,7 +22,23 @@ export default function Header() {
     }, [])
 
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
-        
+        setSearchFilters({
+            ...searchFilters, 
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        //validate
+        if(Object.values(searchFilters).includes("")) {
+            alert("Please fill in all fields")
+            return
+        }
+
+        // Query the recipes
+        searchRecipes(searchFilters)
     }
 
     return (
@@ -50,7 +67,7 @@ export default function Header() {
                 </div>
 
                 {isHome && (
-                    <form action="" className="md:w-1/2 2xl:w-1/3 bg-orange-500 my-16 p-10 rounded-md">
+                    <form onSubmit={handleSubmit} className="md:w-1/2 2xl:w-1/3 bg-orange-500 my-16 p-10 rounded-md">
                         <div className="space-y-4">
                             <label htmlFor="ingredient" className="block text-white uppercase font-extrabold">
                                 Search by Name or Ingridients
@@ -62,6 +79,8 @@ export default function Header() {
                                 name="ingredient"
                                 className="p-3 w-full rounded-md focus:outline-none"
                                 placeholder="Name or Ingridient. For example: Vodka, Coffee, ..."
+                                onChange={handleChange}
+                                value={searchFilters.ingredient}
                             />
                         </div>
 
@@ -74,6 +93,8 @@ export default function Header() {
                                 id="category" 
                                 name="category"
                                 className="p-3 w-full rounded-md focus:outline-none"
+                                onChange={handleChange}
+                                value={searchFilters.category}
                             >
                                 <option value="">-- Select Categorie --</option>
 
