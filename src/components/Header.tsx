@@ -17,6 +17,8 @@ export default function Header() {
     const searchRecipes = useAppStore((state) => state.searchRecipes )
     //console.log(categories)
 
+    const showNotification = useAppStore((state) => state.showNotification)
+
     useEffect(() => {
         fetchCategories()
     }, [])
@@ -33,7 +35,10 @@ export default function Header() {
 
         //validate
         if(Object.values(searchFilters).includes("")) {
-            alert("Please fill in all fields")
+            showNotification({
+                text: "All fields are required", 
+                error: true
+            })
             return
         }
 

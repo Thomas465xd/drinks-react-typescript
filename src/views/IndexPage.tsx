@@ -10,20 +10,23 @@ export default function IndexPage() {
 
     return (
         <>
-            <h1 className="font-extrabold text-6xl">Recipes</h1>
+            <div className="container mx-auto p-4">
+                <h1 className="font-extrabold text-6xl border-orange-500 border-b-4 p-4">Recipes</h1>
 
-            {hasDrinks ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-10">
-                    {drinks.map((drink) => (
-                        <DrinkCard 
-                            key={drink.idDrink} 
-                            drink={drink} 
-                        />
-                    ))}
-                </div>
-            ) : (
-                <p className="my-10 text-center text-2xl">No recipes</p>
-            )}
+
+                {hasDrinks ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-10 ">
+                        {drinks.map((drink) => (
+                            <DrinkCard 
+                                key={drink.idDrink} 
+                                drink={drink} 
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <p className="my-10 text-center text-2xl">No recipes</p>
+                )}
+            </div>
         </>
     )
 }
