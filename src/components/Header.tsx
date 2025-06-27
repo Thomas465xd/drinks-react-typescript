@@ -80,8 +80,11 @@ export default function Header() {
 
                         <NavLink 
                             to="/ai" 
-                            className={({isActive}) =>
-                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold hover hover:text-gray-300 transition-colors duration-200"
+                            className={({ isActive }) =>
+                                `uppercase font-bold transition-colors duration-200
+                                ${isActive 
+                                    ? 'text-orange-500' 
+                                    : 'bg-gradient-to-l from-slate-300 via-white to-orange-400 text-transparent bg-clip-text'}`
                             }
                         >
                             Generate with AI
