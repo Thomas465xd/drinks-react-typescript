@@ -21,36 +21,48 @@ A sleek cocktail web app that lets you search for your favorite cocktail recipes
 ## ⚙️ Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Thomas465xd/drinks-react-typescript.git
+    ```
+
 2. Navigate to the project folder:
+
    ```bash
    cd drinks-react-typescript
    ```
+
 3. Install Dependencies:
+
    ```bash
    npm install
    ```
+
 4. Run the development server:
+
   ```bash
   npm run dev
   ```
-5. Open your browser and navigate to http://localhost:3000
+
+1. Open your browser and navigate to [(http://localhost:3000)]
 
 ## 🚀 Usage
+
 Use the search bar to find a cocktail by name or ingredient.
 Click on a cocktail to view detailed recipe instructions and ingredients.
 Add cocktails to your favorites for quick access.
 
 ## 📑 License
+
 This project is licensed under the MIT License.
 
 ## 🎉 Acknowledgments
+
 Cocktail API for providing a free, extensive cocktail database.
 Thanks to Tailwind CSS and Headless UI for making styling straightforward and responsive.
 
 Happy Mixing! 🥂
-   
+
 ---
 
-Made with ❤️ Thomas Schrödinger 
+Made with ❤️ **Thomas Schrödinger**
