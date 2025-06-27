@@ -1,10 +1,11 @@
-# 🍹 Cocktail Searcher - React Router & TypeScript
+# 🍹 AI Cocktail Searcher - React Router & TypeScript
 
 A sleek cocktail web app that lets you search for your favorite cocktail recipes and add them to a favorites list. This app is built using **React**, **React Router DOM**, **TypeScript**, **ZOD**, **Zustand**, and the **Cocktail API** for fetching recipes. The UI is styled with **Tailwind CSS** and **Headless UI** for a modern, accessible look.
 
 ## 🛠 Features
 
 - **Cocktail Search**: Easily search for cocktails by name or ingredient.
+- **AI powered Cocktail Search**: Used openRouter AI API to allow users to ask an specialized AI for cocktail ideas.
 - **Recipe Details**: View detailed recipes, including ingredients and preparation instructions.
 - **Favorites List**: Save and manage your favorite cocktails for quick access.
 - **Smooth Navigation**: Built with React Router for seamless page transitions.
