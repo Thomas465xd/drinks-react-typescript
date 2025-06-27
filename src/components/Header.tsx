@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useAppStore } from "../stores/useAppStore"
+import DarkMode from "./ui/DarkMode"
 
 export default function Header() {
 
@@ -49,25 +50,42 @@ export default function Header() {
     return (
         <header className={ isHome ? 'bg-header bg-center bg-cover' : 'bg-slate-800'}>
             <div className="mx-auto container px-5 py-16">
+                <div className="fixed left-5 top-5">
+                    <DarkMode />
+                </div>
+
                 <div className="flex justify-between items-center">
                     <div className="">
                         <img className="w-32" src="/logo.svg" alt="logotype" />
                     </div>
 
-                    <nav className="flex gap-4">
+                    <nav className="flex gap-4 items-center">
                         <NavLink 
                             to="/" 
                             className={({isActive}) =>
-                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold"
+                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold hover hover:text-gray-300 transition-colors duration-200"
                             }
-                        >Home</NavLink>
+                        >
+                            Home
+                        </NavLink>
 
                         <NavLink 
                             to="/favorites" 
                             className={({isActive}) =>
-                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold"
+                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold hover hover:text-gray-300 transition-colors duration-200"
                             }
-                        >Favorites</NavLink>
+                        >
+                            Favorites
+                        </NavLink>
+
+                        <NavLink 
+                            to="/ai" 
+                            className={({isActive}) =>
+                                isActive ? 'text-orange-500 uppercase font-bold' : "text-white uppercase font-bold hover hover:text-gray-300 transition-colors duration-200"
+                            }
+                        >
+                            Generate with AI
+                        </NavLink>
                     </nav>
                 </div>
 

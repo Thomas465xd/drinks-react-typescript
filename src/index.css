@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+	--background: #363541;
+	--foreground: #ededed;
+}
+
+.light {
+	--background: #ffffff;
+	--foreground: #000000;
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+}
