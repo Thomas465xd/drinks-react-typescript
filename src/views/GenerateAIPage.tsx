@@ -29,18 +29,18 @@ export default function GenerateAIPage() {
 
 	return (
 		<>
-			<h1 className="text-6xl font-extrabold">Generate Recipe with AI</h1>
+			<h1 className="text-center text-5xl md:text-6xl font-extrabold">Generate Recipe with AI</h1>
 
-			<div className="max-w-4xl mx-auto">
+			<div className="max-w-sm sm:max-w-xl md:max-w-4xl mx-auto">
 				<form
 					onSubmit={handleSubmit}
-					className="flex flex-col space-y-3 py-10"
+					className="flex flex-col space-y-3 py-10 px-2"
 				>
 					<div className="relative">
                         <input
                             name="prompt"
                             id="prompt"
-                            className="text-black border bg-white p-4 rounded-lg w-full border-slate-800"
+                            className="text-black border bg-white p-4 rounded-lg w-full border-slate-800 truncate"
                             placeholder="Generate a Recipe with Ingredients. Ej. A True Amaretto Sour"
                         />
                         <button
@@ -62,7 +62,7 @@ export default function GenerateAIPage() {
 
                 {isGenerating && <p className="text-center animate-blink font-bold">Generating...</p>}
                 
-				<div className="py-10 whitespace-pre-wrap">
+				<div className="py-10 whitespace-pre-wrap mx-2">
                     <ReactMarkdown>{ recipe }</ReactMarkdown>
                 </div>
 			</div>

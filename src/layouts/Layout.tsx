@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Modal from "../components/Modal";
 import { useAppStore } from "../stores/useAppStore";
 import Notification from "../components/Notification";
+import Footer from "../components/ui/Footer";
 export default function Layout() {
 
     const loadFromStorage = useAppStore((state) => state.loadFromStorage)
@@ -23,11 +24,7 @@ export default function Layout() {
             <Modal />
             <Notification />
 
-            <footer className="text-center text-white text-sm mt-10 bg-slate-800 font-black">
-                <p className="p-2">Powered by <a href="https://www.thecocktaildb.com/">TheCocktailDB</a></p>
-                <p className="p-2">Copyright &copy; {new Date().getFullYear()}</p>
-                <p className="border-gray-500 border-t-2 mt-2 p-2">Made with ❤️ Thomas Schrödinger</p>
-            </footer>
+            <Footer />
         </>
     )
 }
